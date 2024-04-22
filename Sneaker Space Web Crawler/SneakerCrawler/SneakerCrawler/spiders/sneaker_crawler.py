@@ -8,7 +8,7 @@ class SneakerCrawlerSpider(CrawlSpider):
     name = "sneaker_crawler"
     allowed_domains = ["en.wikipedia.org"]
     start_urls = ["https://en.wikipedia.org/wiki/Sneakers"]
-    custom_settings = {'DEPTH_LIMIT': 3}
+    custom_settings = {'DEPTH_LIMIT': 3 , 'CLOSESPIDER_PAGECOUNT': 250 }
 
     link_extractor = LinkExtractor(restrict_css='#mw-content-text > div.mw-content-ltr.mw-parser-output > p')
     rules = (
@@ -24,9 +24,12 @@ class SneakerCrawlerSpider(CrawlSpider):
         document_path = Path(os.path.join(document_dir, document_name))
         document_path.write_bytes(response.body)
         
+        title = content_area.css("span.mw-page-title-main::text").get()
+        details = "".join(content_area.css("p::text").getall()).replace("\n", " ")
+        
         yield {
-            "Sneaker Title": content_area.css("span.mw-page-title-main::text").get().strip(),
-            "Sneaker Details": "".join(content_area.css("p::text").getall()).replace("\n", " "),
+            "Sneaker Title": title.strip() if title else 'No Title',
+            "Sneaker Details": details if details.strip() else 'No Details',
             "Visit": response.url
         }
         
