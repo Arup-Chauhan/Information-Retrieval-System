@@ -87,7 +87,7 @@ To use the system, follow the detailed steps outlined in the Operation section t
 
 ## Sample Output
 
-![alt text](image.png)
+![alt text](https://github.com/Arup-Chauhan/CS429-IR-Project-Deployment/blob/main/Output%20image.png)
 
 
 ## Acknowledgements
