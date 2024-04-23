@@ -17,6 +17,46 @@ The architecture consists of modular components with defined interfaces, allowin
 
 # Operations Guide
 
+## Installation
+
+```bash
+# Instructions to clone and setup the project
+git clone [repository-url]
+cd [project-directory] 
+[Sneaker Space Web Crawler]
+[Sneaker Space Indexer]
+[Sneaker Space Processor]
+
+pip install components as needed
+
+```
+## Configuration Guide
+
+The project uses a `config.json` file to manage directory paths and command configurations for different components, ensuring that all parts of the system reference the correct locations and settings.
+
+### Structure of `config.json`
+
+- `crawler`: Contains the directory and command for running the crawler component.
+- `scrappedDocuments`: Specifies where the crawled HTML documents are stored.
+- `parser`: Defines the script path and input/output directories for the HTML to JSON parser.
+- `indexer`: Includes the script path, input JSON file, and output paths for the corpus and index files created by the indexer.
+- `processor`: Contains the script path for the query processor and the host and port configuration for the Flask server.
+
+### Using `config.json`
+
+To utilize the `config.json` file, each script should be modified to read the configuration settings at runtime. Here's an example of how you might read the config file in Python:
+
+```python
+import json
+
+# Load the configuration file
+with open('config.json', 'r') as config_file:
+    config = json.load(config_file)
+
+# Accessing the configuration for the crawler
+crawler_directory = config['crawler']['directory']
+crawler_command = config['crawler']['command']
+
 ## Setting Up the Project
 
 1. **Creating a Virtual Environment:**
@@ -119,17 +159,6 @@ The Query Processor uses Flask to handle HTTP requests and outputs the top K rel
 ### Sneaker Parser
 
 This component parses detailed sneaker data from JSON, structuring it into a format ready for indexing or direct querying.
-
-
-## Installation
-
-```bash
-# Instructions to clone and setup the project
-git clone [repository-url]
-cd [project-directory]
-pip install as prompted
-# Additional installation steps
-```
 
 ## Usage
 

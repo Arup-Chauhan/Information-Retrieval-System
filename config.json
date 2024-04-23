@@ -1,0 +1,25 @@
+{
+    "crawler": {
+        "directory": "CS429-IR-Project-Deployment/Sneaker Space Web Crawler/SneakerCrawler",
+        "command": "scrapy crawl sneaker_crawler"
+    },
+    "scrappedDocuments": {
+        "directory": "CS429-IR-Project-Deployment/Sneaker Space Web Crawler/ScrappedDocuments"
+    },
+    "parser": {
+        "script": "ScrappedDocumentParser.py",
+        "inputDirectory": "CS429-IR-Project-Deployment/Sneaker Space Web Crawler/ScrappedDocuments",
+        "outputDirectory": "CS429-IR-Project-Deployment/Sneaker Space Indexer/ParsedDocument"
+    },
+    "indexer": {
+        "script": "SneakerIndexer.py",
+        "inputFile": "CS429-IR-Project-Deployment/Sneaker Space Indexer/ParsedDocument/ParsedDocument.json",
+        "corpusOutput": "CS429-IR-Project-Deployment/Sneaker Space Indexer/TextCorpus/DocumentCorpus.txt",
+        "indexOutput": "CS429-IR-Project-Deployment/Sneaker Space Indexer/IndexFile/TF-IDF-index.pkl"
+    },
+    "processor": {
+        "script": "SneakerQueryProcessor.py",
+        "host": "localhost",
+        "port": 3000
+    }
+}
