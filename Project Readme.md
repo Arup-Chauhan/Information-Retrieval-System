@@ -14,19 +14,84 @@ Our system integrates multiple components that work in conjunction to provide ef
 ### Architecture
 The architecture consists of modular components with defined interfaces, allowing for scalable and maintainable software development.
 
-### Operation
-The operation of the system is handled through scripted commands which manage the workflow from data crawling to query processing.
 
-### Conclusion
-Preliminary results indicate a successful implementation with potential areas for improvement in data accuracy and query speed.
+# Operations Guide
 
-### Data Sources
+## Setting Up the Project
+
+1. **Creating a Virtual Environment:**
+   To isolate the project dependencies, create a virtual environment at the root of the project directory.
+   ```bash
+   python -m venv venv
+   ```
+
+2. **Activating the Virtual Environment:**
+   Before running any of the project components, make sure to activate the virtual environment with the following command:
+   ```bash
+   .\venv\Scripts\activate
+   ```
+
+## Running the Sneaker Crawler
+
+1. **Navigate to the Crawler Directory:**
+   Change into the directory containing the crawler:
+   ```bash
+   cd CS429-IR-Project-Deployment\Sneaker Space Web Crawler\SneakerCrawler
+   ```
+
+2. **Start the Crawler:**
+   Execute the following command to run the custom crawler `sneaker_crawler`. Note that you do not include the `.py` extension in the command.
+   ```bash
+   scrapy crawl sneaker_crawler
+   ```
+   Adjust the `DEPTH_LIMIT` in the `sneaker_crawler.py` to vary the penetration of the crawl. The scraped HTML files will be saved in the `ScrappedDocuments` folder.
+
+## Indexing the Data
+
+1. **Run the HTML to JSON Parser:**
+   From the root of the project, navigate to the indexer directory and run the parser to convert HTML files to JSON:
+   ```bash
+   python ScrappedDocumentParser.py
+   ```
+   This script reads the HTML documents, extracts the relevant information, and saves it in the `ParsedDocument.json` file located in the `ParsedDocument` folder.
+
+2. **Execute the Indexer Script:**
+   Continue in the indexer directory to run the indexing script:
+   ```bash
+   python SneakerIndexer.py
+   ```
+   This will process the JSON data, create a document corpus, and generate the TF-IDF index, which are stored in `DocumentCorpus.txt` and `TF-IDF-index.pkl` respectively.
+
+## Query Processing and Running the Flask Server
+
+1. **Run the Query Processor:**
+   First, run the query processing script to handle the search queries:
+   ```bash
+   python SneakerQueryProcessor.py
+   ```
+
+2. **Start the Flask Application:**
+   Finally, navigate to the processor module and start the Flask server to host the project on `localhost:3000`:
+   ```bash
+   flask run
+   ```
+
+## Testing the Search Functionality
+
+1. **Using Postman for Search Queries:**
+   To perform search queries, use Postman or a similar API platform to send a POST request to `localhost:3000/search` with a JSON payload containing the query and the number of top results (`top_k`) desired.
+
+   The response from the Flask server will be the top K relevant sneaker results based on the search query. An output example is provided as 'Output image.png' to showcase the expected search results.
+
+One of the output has been addded as image below.
+
+## Data Sources
 Data is primarily sourced from Wikipedia, with the system designed to extend to other sneaker-related websites.
 
-### Test Cases
+## Test Cases
 Test frameworks and coverage details will be discussed to ensure the reliability and efficiency of the system.
 
-### Source Code
+## Source Code
 All source code used in this project is open-source, adhering to MIT licensing, with detailed documentation provided for each component.
 
 ## Components
@@ -35,41 +100,26 @@ All source code used in this project is open-source, adhering to MIT licensing, 
 
 The Sneaker Crawler is built using Scrapy to navigate and download relevant sneaker content from Wikipedia within predefined limits.
 
-```python
-# Code found in reference GitHub repo
-```
-
 ### HTML to JSON
 
 This module converts the HTML content scraped by the crawler into JSON format, making it easier for further processing and indexing.
 
-```python
-# Code found in reference GitHub repo
-```
 
 ### Sneaker Indexer
 
 The Sneaker Indexer utilizes a TF-IDF approach implemented with Scikit-Learn to create an efficient search index from the JSON data.
 
-```python
-# Code found in reference GitHub repo
-```
 
 ### Query Processor
 
 The Query Processor uses Flask to handle HTTP requests and outputs the top K relevant sneaker results based on user queries.
 
-```python
-# Code found in reference GitHub repo
-```
+
 
 ### Sneaker Parser
 
 This component parses detailed sneaker data from JSON, structuring it into a format ready for indexing or direct querying.
 
-```python
-# Code found in reference GitHub repo
-```
 
 ## Installation
 
