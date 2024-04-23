@@ -85,6 +85,13 @@ pip install as prompted
 
 To use the system, follow the detailed steps outlined in the Operation section to activate the crawler, run the indexer, and start the query processor.
 
+## Sample Output
+
+![alt text](image.png)
+
+
 ## Acknowledgements
 
-Special thanks to Prof. Panchal and all contributors from CS 429 for their guidance and support throughout the project.
+Special thanks to Prof. Panchal and all TAs and my peers from class of CS 429 for their guidance and support throughout the project.
+
+
