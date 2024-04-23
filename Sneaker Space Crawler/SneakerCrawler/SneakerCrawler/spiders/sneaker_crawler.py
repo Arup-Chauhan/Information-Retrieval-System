@@ -19,7 +19,7 @@ class SneakerCrawlerSpider(CrawlSpider):
         content_area = response.css("div.mw-content-ltr")
         current_page = response.url.split("/")[-1]
         
-        document_dir = "C:\\Users\\arupd\\Documents\\Academics\\CS 429\\Project\\Final Iteration V2\\CS429-IR-Project-Deployment\\Sneaker Space Web Crawler\\ScrappedDocuments"
+        document_dir = "C:\\Users\\arupd\\Documents\\Academics\\CS 429\\Project\\Final Iteration V2\\CS429-IR-Project-Deployment\\Sneaker Space Crawler\\ScrappedDocuments"
         document_name = f"sneaker_space-{current_page}.html"
         document_path = Path(os.path.join(document_dir, document_name))
         document_path.write_bytes(response.body)
