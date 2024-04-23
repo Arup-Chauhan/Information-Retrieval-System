@@ -88,6 +88,3 @@ To use the system, follow the detailed steps outlined in the Operation section t
 ## Acknowledgements
 
 Special thanks to Prof. Panchal and all contributors from CS 429 for their guidance and support throughout the project.
-```
-
-This revised README clearly directs users to the GitHub repository for detailed code and further instructions, keeping the main document concise and focused on project details and structure. If you need to add real links or further details, feel free to modify the placeholders as necessary!
