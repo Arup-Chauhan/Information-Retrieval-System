@@ -18,7 +18,7 @@ def handle_query():
     
     query = request.get_json()['query']
     K = request.get_json()['top_k']
-    output_file = r'C:\Users\arupd\Documents\Academics\CS 429\Project\Final Iteration V2\CS429-IR-Project-Deployment\Sneaker Space Indexer\FinalOutputJSON\FilteredJSON.json'
+    output_file = "C://Users//arupd//Documents//Academics//CS 429//Project//Final Iteration V2//CS429-IR-Project-Deployment//Sneaker Space Indexer//ParsedDocument//ParsedDocument.json"
 
     results = SneakerQueryProcessor.searchQuery(query, K, output_file)
     return jsonify(results)

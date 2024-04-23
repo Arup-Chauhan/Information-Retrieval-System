@@ -22,7 +22,7 @@ def create_tf_idf_index(corpus):
         for j in range(len(corpus)):
             if X[j, i] > 0:
                 tfidf_index[feature].append((j, X[j, i]))
-    return tfidf_index
+    return vectorizer, X
 
 def save_to_file(data, filename, mode='w', encoding='utf-8'):
     with open(filename, mode, encoding=encoding) as f:
@@ -47,7 +47,7 @@ def main():
     print(f"Documents loaded successfully: {len(corpus)}")
 
     tfidf_index = create_tf_idf_index(corpus)
-    save_object_to_pickle(tfidf_index, 'C:/Users/arupd/Documents/Academics/CS 429/Project/Final Iteration V2/CS429-IR-Project-Deployment/Sneaker Space Indexer/IndexFile/TF-IDF-index.pickle')
+    save_object_to_pickle(tfidf_index, 'C:/Users/arupd/Documents/Academics/CS 429/Project/Final Iteration V2/CS429-IR-Project-Deployment/Sneaker Space Indexer/IndexFile/TF-IDF-index.pkl')
     save_to_file(corpus, 'C:/Users/arupd/Documents/Academics/CS 429/Project/Final Iteration V2/CS429-IR-Project-Deployment/Sneaker Space Indexer/TextCorpus/DocumentCorpus.txt')
     
     json_output_path = 'C:/Users/arupd/Documents/Academics/CS 429/Project/Final Iteration V2/CS429-IR-Project-Deployment/Sneaker Space Indexer/OutputParsedJSON/CorpusData.json'

@@ -20,7 +20,7 @@ def load_index(tfidf_index_file):
 
 def searchQuery(query, K, output_file):
     
-    tfidf_vectorizer, tfidf_matrix = load_index(r'C:\Users\arupd\Documents\Academics\CS 429\Project\Final Iteration V2\CS429-IR-Project-Deployment\Sneaker Space Indexer\IndexFile\TF-IDF-index.pickle')
+    tfidf_vectorizer, tfidf_matrix = load_index(r'C:\Users\arupd\Documents\Academics\CS 429\Project\Final Iteration V2\CS429-IR-Project-Deployment\Sneaker Space Indexer\IndexFile\TF-IDF-index.pkl')
 
 
     df_documents = pd.read_json(output_file)
