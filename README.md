@@ -1,18 +1,11 @@
 # Web-based Information Retrieval System for Sneakers
 
-## Project Report Overview
-
-### Abstract
-This document outlines the development, objectives, and future steps of our sneaker information retrieval system. The project focuses on automating the extraction, processing, and querying of sneaker-related information from the web.
 
 ### Overview
 The system is designed using modern Python-based technologies to crawl, parse, index, and retrieve sneaker data. It aims to provide a user-friendly interface for sneaker enthusiasts and researchers.
 
 ### Design
-Our system integrates multiple components that work in conjunction to provide efficient data retrieval. These components include a web crawler, HTML to JSON parser, text indexer, and a query processor.
-
-### Architecture
-The architecture consists of modular components with defined interfaces, allowing for scalable and maintainable software development.
+Our system integrates multiple components that work in conjunction to provide efficient data retrieval. These components include a web crawler, HTML to JSON parser, text indexer, and a query processor
 
 
 # Operations Guide
