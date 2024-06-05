@@ -1,4 +1,4 @@
-# Information Retrieval System for Sneakers
+# Web-based Information Retrieval System for Sneakers
 
 
 ### Overview
