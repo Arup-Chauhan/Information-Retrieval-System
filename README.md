@@ -161,8 +161,3 @@ To use the system, follow the detailed steps outlined in the Operation section t
 
 ![alt text](https://github.com/Arup-Chauhan/CS429-IR-Project-Deployment/blob/main/Output%20image.png)
 
-
-## Acknowledgements
-
-Special thanks to Prof. Panchal and all TAs and my peers from class of CS 429 for their guidance and support throughout the project.
-
