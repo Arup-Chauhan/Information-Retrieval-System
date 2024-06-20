@@ -1,8 +1,8 @@
-# Web-based Information Retrieval System for Sneakers
+# Web-based Information Retrieval System
 
 
 ### Overview
-The system is designed using modern Python-based technologies to crawl, parse, index, and retrieve sneaker data. It aims to provide a user-friendly interface for sneaker enthusiasts and researchers.
+The system is designed using modern Python-based technologies to crawl, parse, index, and retrieve data. With customizable data topic, the project aims to provide a user-friendly interface for enthusiasts and researchers.
 
 ### Design
 Our system integrates multiple components that work in conjunction to provide efficient data retrieval. These components include a web crawler, HTML to JSON parser, text indexer, and a query processor
@@ -64,7 +64,7 @@ crawler_command = config['crawler']['command']
    .\venv\Scripts\activate
    ```
 
-## Running the Sneaker Crawler
+## Running the Crawler
 
 1. **Navigate to the Crawler Directory:**
    Change into the directory containing the crawler:
@@ -138,7 +138,7 @@ The Sneaker Crawler is built using Scrapy to navigate and download relevant snea
 This module converts the HTML content scraped by the crawler into JSON format, making it easier for further processing and indexing.
 
 
-### Sneaker Indexer
+### Indexer
 
 The Sneaker Indexer utilizes a TF-IDF approach implemented with Scikit-Learn to create an efficient search index from the JSON data.
 
@@ -149,7 +149,7 @@ The Query Processor uses Flask to handle HTTP requests and outputs the top K rel
 
 
 
-### Sneaker Parser
+### Parser
 
 This component parses detailed sneaker data from JSON, structuring it into a format ready for indexing or direct querying.
 
